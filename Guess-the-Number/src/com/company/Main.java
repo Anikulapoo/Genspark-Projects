@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
-	// write your code here{
+    public static void main(String[] args) {
+        // write your code here{
         Scanner in = new Scanner(System.in);
         Random rand = new Random();
 
@@ -16,7 +16,7 @@ public class Main {
         int guessCount;
         String name;
 
-        while(cont.equals("y")) {
+        while (cont.equals("y")) {
             name = "";
             randomNumber = rand.nextInt(20);
             randomNumber++;
@@ -27,36 +27,42 @@ public class Main {
             System.out.println("Well " + name + ", I am thinking of a number between 1 and 20.");
             System.out.println("Take a guess.");
 
-            guess = Integer.parseInt(in.nextLine());
-            guessCount = 1;
+            try {
 
-            while (guessCount < 6) {
-                if (randomNumber < guess) {
-                    System.out.println("Your guess is too high.");
-                    System.out.println("Take a guess.");
-                } else if (randomNumber > guess) {
-                    System.out.println("Your guess is too low.");
-                    System.out.println("Take a guess.");
-                } else {
-                    break;
-                }
                 guess = Integer.parseInt(in.nextLine());
-                guessCount++;
-            }
+                guessCount = 1;
 
-            if (guessCount == 6) {
-                System.out.println("Sorry, you could not guess the number in 6 tries.");
-            } else if (guessCount == 1) {
-                System.out.println("Good job, " + name + "!  You guessed my number on your first guess!");
-            } else {
-                System.out.println("Good job, " + name + "!  You guessed my number in " + guessCount + " guesses!");
+
+                while (guessCount < 6) {
+                    if (randomNumber < guess) {
+                        System.out.println("Your guess is too high.");
+                        System.out.println("Take a guess.");
+                    } else if (randomNumber > guess) {
+                        System.out.println("Your guess is too low.");
+                        System.out.println("Take a guess.");
+                    } else {
+                        break;
+                    }
+                    guess = Integer.parseInt(in.nextLine());
+                    guessCount++;
+                }
+
+                if (guessCount == 6) {
+                    System.out.println("Sorry, you could not guess the number in 6 tries.");
+                } else if (guessCount == 1) {
+                    System.out.println("Good job, " + name + "!  You guessed my number on your first guess!");
+                } else {
+                    System.out.println("Good job, " + name + "!  You guessed my number in " + guessCount + " guesses!");
+                }
+                System.out.println("Would you like to play again? (y or n)");
+                cont = in.nextLine().toLowerCase();
+
+
+            } catch (Exception ex) {
+                System.out.println("Please re-inter a viable input");
             }
-            System.out.println("Would you like to play again? (y or n)");
-            cont = in.nextLine().toLowerCase();
 
 
         }
-
-
     }
 }
