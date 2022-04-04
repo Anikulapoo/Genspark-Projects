@@ -1,11 +1,9 @@
-package com.company;
-
 import java.util.Scanner;
 
-public class Main {
-
+public class Decon {
     public static void main(String[] args) {
-	// write your code here
+
+        // write your code here
         Scanner myObj = new Scanner(System.in);
         System.out.println("You are in a land full of dragons. In front of you,");
         System.out.println("you see two caves. In one cave, the dragon is friendly");
@@ -13,7 +11,8 @@ public class Main {
         System.out.println("is greedy and hungry and will eat you on sight.");
         System.out.println("Which cave will you go into? (1 or 2)");
 
-        try{ int choice = myObj.nextInt();
+        try {
+            int choice = myObj.nextInt();
 
             switch (choice) {
                 case 1:
@@ -23,7 +22,8 @@ public class Main {
                     System.out.println("Gobbles you down in one bite!");
             }
         } catch (Exception ex) {
-            System.out.println("Please re-enter a viable input.");}
+            System.out.println("Please re-enter a viable input.");
+        }
         return;
     }
 }
