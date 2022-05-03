@@ -1,9 +1,11 @@
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hangman {
     private static String[] words = {"Apple", "Banana", "Cat", "Dog", "Elephant", "Frog" };
+    private static int randInt = (int) (Math.random() * words.length);
     private static String word = words[(int) (Math.random() * words.length)];
     private static String underscore = new String(new char[word.length()]).replace("\0", "_");
     private static int count = 1;

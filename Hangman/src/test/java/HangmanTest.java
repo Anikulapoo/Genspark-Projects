@@ -14,7 +14,7 @@ class HangmanTest {
     @AfterEach
     void tearDown() {
     }
-    
+
 
     @Test
     void hangmanPicture() {
